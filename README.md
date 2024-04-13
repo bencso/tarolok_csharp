@@ -21,8 +21,9 @@ típus[] elnevezés;
 >[!IMPORTANT]
 >Az indexelés 0-val kezdődik. Ez azt jelenti, hogy a tömb első eleme a 0. indexen lesz, nem pedig az 1-ön.
   
-### Egydimenziós tömb deklarálása:
+### Egydimenziós tömb:
 > Az egydimenziós tömb olyan adatszerkezet ,amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezt úgy lehet elképzelni, mint egy listát (Array), ahol minden elemnek van egy **egyedi** indexe, amely **nullával** kezdődik.
+Deklarálás:
 ```csharp
 int[] 1DTomb = new int[14];
 ```
@@ -40,9 +41,10 @@ nevsor[2] = "Nagy Lajos";
 nevsor[n+1] = "....";
 ```
 
-### Többdimenziós/mátrix tömb deklarálás:
+### Többdimenziós/mátrix tömb:
 > A többdimenziós tömbök, egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
 > Úgy is mondhatjuk, hogy ez a "tömbök tömbje"
+Deklarálás:
 ```csharp
 int[,] tobbDimenzios = new int[sor][oszlop];
 ```
