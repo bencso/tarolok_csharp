@@ -1,4 +1,6 @@
 # Tárolók
+<img src="tombok.jpg"/>
+
 ## Tömb
 > A tömb olyan adatszerkezet, amely több azonos típusú változót tárolhat. Egy tömb deklarálásához meg kell adnunk, hogy milyen típusú elemeket fogunk benne tárolni. Ha bármilyen típusú elemeket szeretnénk tárolni benne, akkor a tömböt `object`-ként kell deklarálni.
 ```csharp
@@ -6,7 +8,7 @@ típus[] elnevezés;
 ```
 - példa `típus`-ok:
   - ```csharp
-    int[] egeszszam = new int[x];
+    int[] egeszSzam = new int[x];
     ```
   - ```csharp
     string[] karakterLanc = new string[x];
@@ -21,17 +23,17 @@ típus[] elnevezés;
 ### Egydimenziós tömb deklarálása:
 > Az egydimenziós tömb olyan lineáris adatszerkezet, amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezeket a tömböket úgy lehet elképzelni, mint egy elemeket tartalmazó listát, ahol minden elemnek van egy egyedi indexe, amely nullával kezdődik.
 ```csharp
-int[] 1Dtomb = new int[14];
+int[] 1DTomb = new int[14];
 ```
 
 ### Kétdimenziós deklarálása:
 > A többdimenziós tömbök egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
 ```csharp
-int[,] 2Dtomb = new int[4,2];
+int[,] 2DTomb = new int[4,2];
 ```
 ### Többdimenziós/matrix tömb deklarálás:
 ```csharp
-int[,] tobbdimenzios = new int[,]{
+int[,] tobbDimenzios = new int[,]{
   { 1, 2, 3 },
   { 4, 5, 6 },
   { 7, 8, 9 }
