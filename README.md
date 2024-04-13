@@ -21,24 +21,64 @@ típus[] elnevezés;
 - Az indexelés 0-val kezdődik. Ez azt jelenti, hogy a tömb első eleme a 0. indexen lesz, nem pedig az 1-ön.
   
 ### Egydimenziós tömb deklarálása:
-> Az egydimenziós tömb olyan lineáris adatszerkezet, amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezeket a tömböket úgy lehet elképzelni, mint egy elemeket tartalmazó listát, ahol minden elemnek van egy egyedi indexe, amely nullával kezdődik.
+> Az egydimenziós tömb olyan adatszerkezet, amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezeket a tömböket úgy lehet elképzelni, mint egy elemeket tartalmazó listát, ahol minden elemnek van egy egyedi indexe, amely nullával kezdődik.
 ```csharp
 int[] 1DTomb = new int[14];
 ```
-
-### Kétdimenziós deklarálása:
-> A többdimenziós tömbök egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
+**Példa: Osztály névsor**
 ```csharp
-int[,] 2DTomb = new int[4,2];
+int[] nevsor = new string[12];
 ```
-### Többdimenziós/matrix tömb deklarálás:
+*Minden egyes gyerek nevéhez tartozik egy alapértelmezett szám , ezzel tudjuk őket megkülönböztetni.<br>
+Jelen esetben az osztály 12 fős (string[**12**]. Mivel a tömb 0. indexe az osztályfőnök neve lesz, ezért a gyerekek 1.-től lesznek megszámozva*
+```
+Tömb:
+
+nevsor[0] = "Nagy Pista tanárúr";
+nevsor[1] = "Kis Albert";
+nevsor[2] = "Nagy Lajos";
+nevsor[n+1] = "....";
+```
+
+### Többdimenziós/mátrix tömb deklarálás:
+> A többdimenziós tömbök egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
+> Úgy is mondhatjuk , hogy ez a "tömbök tömbje"
 ```csharp
-int[,] tobbDimenzios = new int[,]{
-  { 1, 2, 3 },
-  { 4, 5, 6 },
-  { 7, 8, 9 }
+int[,] tobbDimenzios = new int[sor][oszlop];
+```
+
+**Példa: Tic-Tac-Toe**
+```csharp
+int[,] palya = new string[3,3]{
+  { "", "", "" },
+  { "", "", "" },
+  { "", "", "" }
 };
 ```
+*Tic-Tac-Toe játéktere 3 oszlopból és 3 sorból áll.
+Minden olyan kombinációt meg kell vizsgálnunk, amivel a játékos nyerhet.
+Ezt úgy valósítjuk meg, hogy a tömb adott indexein lévő elemeket összevetjük a velük (függölegesen/vízszintesen/átlósan) szomszédos elemekkel.*
+```
+"Koordináták" szerint:
+   |  0 | 1 | 2
+0  |{ 0,  1,  2 } -> palya[0, 0], palya[0, 1], palya[0, 2]);
+1  |{ 0,  1,  2 } -> palya[1, 0], palya[1, 1], palya[1, 2]);
+2  |{ 0,  1,  2 } -> palya[2, 0], palya[2, 1], palya[2, 2]);
+
+A kód szerint:
+   |   0  | 1  | 2
+0  |{ "O", "O", "O" }
+1  |{ "O", "X", "X" }
+2  |{ "X", "O", "X" }
+```
+*A fenti ábrán az "O" játékos nyert, ugyanis az első sorban 3 "O"-t tett le, ezt az alábbi módon tudjuk leellenőrizni:*
+```csharp
+if (palya[0, 0] == "O" && (palya[0, 0] == palya[0, 1]) && (palya[0, 1] == palya[0, 2]))
+  {
+  //Console.WriteLine("O nyert");
+  }
+```
+
 
 ### Feltöltés:
 > A tömb random számokkal való feltöltése for ciklussal:
