@@ -158,7 +158,7 @@ for (int i=0; i<tomb.Length; i++){
 
 ## Lista
 
-*A List<T> osztály egy erősen tipusos objektumlistát reprezentál.A lista, funkciót biztosít objektumok listájának létrehozásához, elemek hozzáadásához a listához, valamint a listában lévő elemek kereséséhez, rendezéséhez és frissítéséhez.*
+*A List<> osztály egy erősen tipusos objektumlistát reprezentál.A lista, funkciót biztosít objektumok listájának létrehozásához, elemek hozzáadásához a listához, valamint a listában lévő elemek kereséséhez, rendezéséhez és frissítéséhez.*
 
 >A C# lista egy általános osztály, és a  eléréséhez ezt a névteret kell importálnia a projektjébe.
 ```csharp
