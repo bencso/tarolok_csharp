@@ -156,7 +156,7 @@ for (int i=0; i<tomb.Length; i++){
   **Eredmény:**
   > [1,2,3,4,0,0]
 
-##Lista
+## Lista
 
 *A List<T> osztály egy erősen tipusos objektumlistát reprezentál.A lista, funkciót biztosít objektumok listájának létrehozásához, elemek hozzáadásához a listához, valamint a listában lévő elemek kereséséhez, rendezéséhez és frissítéséhez.*
 
