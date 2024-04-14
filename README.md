@@ -164,3 +164,13 @@ for (int i=0; i<tomb.Length; i++){
 ```csharp
 using System.Collections.Generic
 ```
+
+### Deklarálás
+```csharp
+List<Int16> egeszSzam = new List<Int16>();
+
+List<string> karakterLanc = new List<string>(2);
+
+string[] tomb = { "elem" };
+List<string> tombbolLista = new List<string>(tomb);
+```
