@@ -29,7 +29,7 @@ int[] 1DTomb = new int[14];
 ```
 **Példa: Osztálynévsor**
 ```csharp
-int[] nevsor = new string[12];
+string[] nevsor = new string[12];
 ```
 *Minden egyes gyerek nevéhez tartozik egy szám, ezzel tudjuk őket megkülönböztetni. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb 0. indexe az osztályfőnök neve lesz, ezért a gyerekek 1.-től lesznek megszámozva*
 ```
@@ -51,7 +51,7 @@ int[,] tobbDimenzios = new int[sor][oszlop];
 
 **Példa: Tic-Tac-Toe**
 ```csharp
-int[,] palya = new string[3,3]{
+string[,] palya = new string[3,3]{
   { "", "", "" },
   { "", "", "" },
   { "", "", "" }
