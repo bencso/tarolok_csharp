@@ -174,3 +174,5 @@ List<string> karakterLanc = new List<string>(2);
 string[] tomb = { "elem" };
 List<string> tombbolLista = new List<string>(tomb);
 ```
+
+[//]: <> (TODO: lista folytatása , dictionary-vel)
