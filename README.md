@@ -200,6 +200,7 @@ lista.AddRange(tomb);
 ```
 > Eredmény
 ```{1,2,3,4}```
+
 *vagy*
 ```csharp
 int[] tomb = {1,2,3,4};
