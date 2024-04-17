@@ -118,7 +118,7 @@ for (int i=0; i<tomb.Length; i++){
 ```
 
 ## Tömbön használt függvények
-- ### Sort()
+- ### Sort(tomb)
   > Ez a függvény, a tömb elemeit növekvő sorrendbe rendezi.
   ```csharp
   int[] tomb = { 3, 1, 4, 2 };
@@ -126,7 +126,7 @@ for (int i=0; i<tomb.Length; i++){
   ```
   **Eredmény:**
   > [1,2,3,4]
-- ### Reverse()
+- ### Reverse(tomb)
   > Ez a függvény, megfordítja a tömb elemeinek sorrendjét.
     ```csharp
   int[] tomb = { 1, 2, 3, 4 };
@@ -134,7 +134,7 @@ for (int i=0; i<tomb.Length; i++){
   ```
   **Eredmény:**
   > [4,3,2,1]
-- ### IndexOf()
+- ### IndexOf(tomb, int)
   > Ez a függvény, egy adott értéket keres a tömbben, és az érték *(első előfordulásának)* indexét adja vissza.
      ```csharp
       int[] tomb = { 1, 2, 3, 4 };
@@ -144,7 +144,7 @@ for (int i=0; i<tomb.Length; i++){
     > Index: 2
 > [!IMPORTANT]
 > Ha az értéket nem találja, akkor -1-et ad vissza.
-- ### Clear()
+- ### Clear(tomb)
   > Ez a függvény, a tömb összes elemét egy alapértelmezett értékre állítja.
     ```csharp
     int[] tomb = { 1, 2, 3, 4 };
@@ -152,7 +152,7 @@ for (int i=0; i<tomb.Length; i++){
     ```
   **Eredmény:**
   > [0,0,0,0]
-- ### Resize()
+- ### Resize(tomb, int)
   > Ez a függvény megváltoztatja a tömb méretét, akár elemek hozzáadásával, akár eltávolításával. 
     ```csharp
     int[] tomb = { 1, 2, 3, 4 };
