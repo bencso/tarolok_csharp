@@ -31,14 +31,18 @@ int[] 1DTomb = new int[14];
 ```csharp
 string[] nevsor = new string[12];
 ```
-*Minden egyes gyerek nevéhez tartozik egy szám, ezzel tudjuk őket megkülönböztetni. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb 0. indexe az osztályfőnök neve lesz, ezért a gyerekek 1.-től lesznek megszámozva*
-```
-Tömb:
+*Minden egyes gyerek nevéhez tartozik egy szám (index), ezzel tudjuk őket megkülönböztetni. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb indexelése 0-val kezdődik, ezért a kódunkban át kell alakítani a felsorolást, ha ki szeretnénk iratni a névsort.*
+```csharp
+//Tömb:
 
-nevsor[0] = "Nagy Pista tanárúr";
-nevsor[1] = "Kis Albert";
+nevsor[0] = "Antal Pista";
+nevsor[1] = "Dénes Albert";
 nevsor[2] = "Nagy Lajos";
 nevsor[n+1] = "....";
+
+for(int i=0;i<nevsor.length;i++){
+ Console.WriteLine("{0}. {1}", i+1 , nevsor[i])
+}
 ```
 
 ### Többdimenziós/mátrix tömb:
