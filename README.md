@@ -48,6 +48,7 @@ for(int i=0;i<nevsor.length;i++){
 ### Többdimenziós/mátrix tömb:
 > A többdimenziós tömbök, egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
 > Úgy is mondhatjuk, hogy ez a "tömbök tömbje"
+
 Deklarálás:
 ```csharp
 int[,] tobbDimenzios = new int[sor][oszlop];
