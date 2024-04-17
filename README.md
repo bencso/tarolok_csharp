@@ -181,18 +181,18 @@ List<string> tombbolLista = new List<string>(tomb);
 ```
 
 ## Lista feltöltése
-Többféle módon tölthetjük fel a listánkat elemekkel:
+> Többféle módon tölthetjük fel a listánkat elemekkel:
 ### Add(elem) 
 Ezzel a függvénnyel egyesével tudjuk , hozzáadni az elemeket a listánkhoz.
 ```csharp
 List<string> lista = new List<string>();
 lista.Add("Ez egy elem lesz");
-lista.Add("Ez egy másik elem);
+lista.Add("Ez egy másik elem");
 ```
 > Eredmény
 ```{"Ez egy elem lesz", "Ez egy másik elem"}```
 ### AddRange(elemek-csoportja)
-Az AddRange függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
+> Az `AddRange()` függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
 ```csharp
 int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
@@ -212,7 +212,7 @@ tomb.ForEach(elem => lista.Add(elem));
 >[!IMPORTANT]
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
 ### Insert(id, elem)
-Az Insert() függvénnyel egy listába , index alapján tudunk beszúrni elemet
+> Az `Insert()` függvénnyel egy listába , index alapján tudunk beszúrni elemet
 ```csharp
 int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
