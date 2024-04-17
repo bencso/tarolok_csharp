@@ -191,7 +191,7 @@ lista.Add("Ez egy másik elem);
 ```
 > Eredmény
 ```{"Ez egy elem lesz", "Ez egy másik elem"}```
-## AddRange(elemek-csoportja)
+### AddRange(elemek-csoportja)
 Az AddRange függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
 ```csharp
 int[] tomb = {1,2,3,4};
@@ -210,7 +210,7 @@ tomb.ForEach(elem => lista.Add(elem));
 ```{1,2,3,4}```
 >[!IMPORTANT]
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
-## Insert(id, elem)
+### Insert(id, elem)
 Az Insert() függvénnyel egy listába , index alapján tudunk beszúrni elemet
 ```csharp
 int[] tomb = {1,2,3,4};
