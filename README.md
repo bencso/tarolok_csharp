@@ -127,6 +127,10 @@ for (int i=0; i<tomb.Length; i++){
   ```
   **Eredmény:**
   > [1,2,3,4]
+
+>[!NOTE]
+> Ha string-et (karakter sorozatot) szeretnénk sort() függvénnyel sorba rendezni, akkor az, az ABC-nek megfelelően helyezi sorba.
+
 - ### Reverse(tomb)
   > Ez a függvény, megfordítja a tömb elemeinek sorrendjét.
     ```csharp
