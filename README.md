@@ -175,6 +175,13 @@ for (int i=0; i<tomb.Length; i++){
 using System.Collections.Generic
 ```
 
+| Tulajdonságok | Leírás |
+| --- | --- |
+| Capacity | Megkapja vagy beállítja a belső adatszerkezetben átméretezés nélkül tárolható elemek teljes számát. |
+| Count | A List<T> listában található elemek számának lekérdezése. |
+| Item[Int] | Megkapja vagy beállítja a megadott indexen lévő elemet. |
+
+
 ### Deklarálás
 ```csharp
 List<int> egeszSzam = new List<int>();
