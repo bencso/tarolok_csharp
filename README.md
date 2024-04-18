@@ -253,4 +253,26 @@ lista.Insert(1, 4)
 **Eredmény:**
 >```{1,4,3,4}```
 
+
+## Függvények:
+
+### LastIndexOf() 
+> Visszaadja egy érték utolsó előfordulásának nulla alapú indexét a listában vagy annak egy részében.
+### Remove(T) 
+> Eltávolítja egy adott objektum első előfordulását a listából.
+### RemoveAll() 
+> Eltávolítja az összes olyan elemet, amely megfelel a meghatározott feltételeknek.
+### RemoveAt(Int) 
+> Eltávolítja a lista megadott indexén lévő elemet.
+### RemoveRange(Int, Int) 
+> Eltávolít egy elemtartományt a listából.
+### Reverse() 
+> Megfordítja a lista elemeinek vagy egy részének sorrendjét. 
+### Sort()  
+> A lista elemeit vagy azok egy részét rendezi. 
+### ToArray()  
+> A lista elemeit egy új tömbbe másolja. 
+### ToString()  
+> Visszaad egy stringet, amely az aktuális objektumot reprezentálja. 
+
 [//]: <> (TODO: lista folytatása, dictionary-vel)
