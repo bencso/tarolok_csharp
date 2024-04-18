@@ -204,7 +204,7 @@ List<int> lista = new List<int>();
 lista.AddRange(tomb);
 ```
 **Eredmény:**
-> ```{1,2,3,4}```
+>```{1,2,3,4}```
 
 *vagy*
 ```csharp
@@ -213,7 +213,7 @@ List<int> lista = new List<int>();
 tomb.ForEach(elem => lista.Add(elem));
 ```
 **Eredmény:**
-> ```{1,2,3,4}```
+>```{1,2,3,4}```
 
 >[!IMPORTANT]
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
@@ -234,7 +234,7 @@ lista:{
 */
 lista.Insert(1, 4)
 ```
-**Eredmény;**
-> ```{1,4,3,4}```
+**Eredmény:**
+>```{1,4,3,4}```
 
 [//]: <> (TODO: lista folytatása, dictionary-vel)
