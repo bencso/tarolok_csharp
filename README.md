@@ -188,7 +188,7 @@ List<string> tombbolLista = new List<string>(tomb);
 ## Lista feltöltése
 > Többféle módon tölthetjük fel a listánkat elemekkel:
 ### Add(elem) 
-Ezzel a függvénnyel egyesével tudjuk, hozzáadni az elemeket a listánkhoz.
+> Ezzel a függvénnyel egyesével tudjuk, hozzáadni az elemeket a listánkhoz.
 ```csharp
 List<string> lista = new List<string>();
 lista.Add("Ez egy elem lesz");
