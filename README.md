@@ -194,7 +194,7 @@ List<string> lista = new List<string>();
 lista.Add("Ez egy elem lesz");
 lista.Add("Ez egy másik elem");
 ```
-> Eredmény
+> Eredmény \n
 ```{"Ez egy elem lesz", "Ez egy másik elem"}```
 ### AddRange(elemek-csoportja)
 > Az `AddRange()` függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
@@ -203,7 +203,7 @@ int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
 lista.AddRange(tomb);
 ```
-> Eredmény
+> Eredmény \n
 ```{1,2,3,4}```
 
 *vagy*
@@ -212,7 +212,7 @@ int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
 tomb.ForEach(elem => lista.Add(elem));
 ```
-> Eredmény
+> Eredmény \n
 ```{1,2,3,4}```
 
 >[!IMPORTANT]
@@ -234,7 +234,7 @@ lista:{
 */
 lista.Insert(1, 4)
 ```
-> Eredmény
+> Eredmény \n
 ```{1,4,3,4}```
 
 [//]: <> (TODO: lista folytatása, dictionary-vel)
