@@ -21,11 +21,11 @@ típus[] elnevezés;
 
 | Tulajdonságok | Leírás |
 | --- | --- |
-| IsFixedLength | Megkapja azt a logikai értéket (bool), amely jelzi, hogy a tömb fix méretű-e. |
-| IsReadOnly | Megkapja azt a logikai értéket (bool), amely jelzi, hogy a tömb csak olvasható-e. |
-| Length | A tömb összes dimenziójának összes elemének számát ("tömb méretét") kapja meg. |
-| MaxLength | A tömbben található elemek maximális számát kapja meg. |
-| Rank | Az dimenziók számát kapja meg. Például egy egydimenziós tömb 1, egy kétdimenziós tömb 2.... |
+| IsFixedLength | Megkapja vagy beállítja azt a logikai értéket (bool), amely jelzi, hogy a tömb fix méretű-e. |
+| IsReadOnly | Megkapja vagy beállítja azt a logikai értéket (bool), amely jelzi, hogy a tömb csak olvasható-e. |
+| Length | A tömb összes dimenziójának összes elemének számát ("tömb méretét") kapja meg vagy állítja be. |
+| MaxLength | A tömbben található elemek maximális számát kapja meg vagy állítja be. |
+| Rank | Az dimenziók számát kapja meg vagy állítja be. Például egy egydimenziós tömb 1, egy kétdimenziós tömb 2.... |
 
 >[!IMPORTANT]
 >Az indexelés 0-val kezdődik. Ez azt jelenti, hogy a tömb első eleme a 0. indexen lesz, nem pedig az 1-ön.
@@ -187,7 +187,7 @@ using System.Collections.Generic
 | Tulajdonságok | Leírás |
 | --- | --- |
 | Capacity | Megkapja vagy beállítja a belső adatszerkezetben átméretezés nélkül tárolható elemek teljes számát. |
-| Count | A List<T> listában található elemek számának lekérdezése. |
+| Count | Megkapja vagy beállítja a listában található elemek számát. |
 | Item[Int] | Megkapja vagy beállítja a megadott indexen lévő elemet. |
 
 
