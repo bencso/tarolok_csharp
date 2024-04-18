@@ -32,7 +32,7 @@ int[] 1DTomb = new int[14];
 ```csharp
 string[] nevsor = new string[12];
 ```
-*Minden egyes gyerek nevéhez tartozik egy szám (index), ezzel tudjuk őket megkülönböztetni. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb indexelése 0-val kezdődik, ezért a kódunkban át kell alakítani a felsorolást, ha ki szeretnénk iratni a névsort.*
+*Minden egyes gyerek nevéhez tartozik egy szám (index), ezzel tudjuk őket azonosítani. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb indexelése 0-val kezdődik, ezért a kódunkban át kell alakítani a felsorolást, ha ki szeretnénk iratni a névsort.*
 ```csharp
 //Tömb:
 
