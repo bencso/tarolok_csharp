@@ -179,7 +179,7 @@ using System.Collections.Generic
 ```csharp
 List<int> egeszSzam = new List<int>();
 
-List<string> karakterLanc = new List<string>(2);
+List<string> karakterLanc = new List<string>(2); // <- így megadjuk a 'capacity'-t
 
 string[] tomb = { "elem" };
 List<string> tombbolLista = new List<string>(tomb);
