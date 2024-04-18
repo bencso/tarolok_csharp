@@ -219,7 +219,7 @@ tomb.ForEach(elem => lista.Add(elem));
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
 
 ### Insert(id, elem)
-> Az `Insert()` függvénnyel egy listába, index alapján tudunk beszúrni elemet
+> Az `Insert()` függvénnyel egy listába, index alapján tudunk beszúrni/módosítani elemet
 ```csharp
 int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
