@@ -23,6 +23,7 @@ típus[] elnevezés;
   
 ### Egydimenziós tömb:
 > Az egydimenziós tömb olyan adatszerkezet ,amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezt úgy lehet elképzelni, mint egy listát (Array), ahol minden elemnek van egy **egyedi** indexe, amely **nullával** kezdődik.
+
 Deklarálás:
 ```csharp
 int[] 1DTomb = new int[14];
