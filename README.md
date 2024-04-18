@@ -18,6 +18,15 @@ típus[] elnevezés;
     ```
   - ...
 - Tömbök egydimenziósak és többdimenziósak is lehetnek. Ezeket a deklarálások során kell megadni.
+
+| Tulajdonságok | Leírás |
+| --- | --- |
+| IsFixedLength | Megkapja azt a logikai értéket (bool), amely jelzi, hogy a tömb fix méretű-e. |
+| IsReadOnly | Megkapja azt a logikai értéket (bool), amely jelzi, hogy a tömb csak olvasható-e. |
+| Length | A tömb összes dimenziójának összes elemének számát ("tömb méretét") kapja meg. |
+| MaxLength | A tömbben található elemek maximális számát kapja meg. |
+| Rank | Az dimenziók számát kapja meg. Például egy egydimenziós tömb 1, egy kétdimenziós tömb 2.... |
+
 >[!IMPORTANT]
 >Az indexelés 0-val kezdődik. Ez azt jelenti, hogy a tömb első eleme a 0. indexen lesz, nem pedig az 1-ön.
   
