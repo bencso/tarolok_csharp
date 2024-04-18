@@ -194,8 +194,8 @@ List<string> lista = new List<string>();
 lista.Add("Ez egy elem lesz");
 lista.Add("Ez egy másik elem");
 ```
-> Eredmény \n
-```{"Ez egy elem lesz", "Ez egy másik elem"}```
+**Eredmény:**
+> ```{"Ez egy elem lesz", "Ez egy másik elem"}```
 ### AddRange(elemek-csoportja)
 > Az `AddRange()` függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
 ```csharp
@@ -203,8 +203,8 @@ int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
 lista.AddRange(tomb);
 ```
-> Eredmény \n
-```{1,2,3,4}```
+**Eredmény:**
+> ```{1,2,3,4}```
 
 *vagy*
 ```csharp
@@ -212,8 +212,8 @@ int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
 tomb.ForEach(elem => lista.Add(elem));
 ```
-> Eredmény \n
-```{1,2,3,4}```
+**Eredmény:**
+> ```{1,2,3,4}```
 
 >[!IMPORTANT]
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
@@ -234,7 +234,7 @@ lista:{
 */
 lista.Insert(1, 4)
 ```
-> Eredmény \n
-```{1,4,3,4}```
+**Eredmény;**
+> ```{1,4,3,4}```
 
 [//]: <> (TODO: lista folytatása, dictionary-vel)
