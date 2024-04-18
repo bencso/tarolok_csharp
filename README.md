@@ -274,5 +274,3 @@ lista.Insert(1, 4)
 > A lista elemeit egy új tömbbe másolja. 
 - ### ToString()  
 > Visszaad egy stringet, amely az aktuális objektumot reprezentálja. 
-
-[//]: <> (TODO: lista folytatása, dictionary-vel)
