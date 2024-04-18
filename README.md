@@ -172,7 +172,7 @@ using System.Collections.Generic
 
 ### Deklarálás
 ```csharp
-List<Int16> egeszSzam = new List<Int16>();
+List<int> egeszSzam = new List<int>();
 
 List<string> karakterLanc = new List<string>(2);
 
