@@ -188,7 +188,7 @@ List<string> tombbolLista = new List<string>(tomb);
 ## Lista feltöltése
 > Többféle módon tölthetjük fel a listánkat elemekkel:
 ### Add(elem) 
-Ezzel a függvénnyel egyesével tudjuk , hozzáadni az elemeket a listánkhoz.
+Ezzel a függvénnyel egyesével tudjuk, hozzáadni az elemeket a listánkhoz.
 ```csharp
 List<string> lista = new List<string>();
 lista.Add("Ez egy elem lesz");
@@ -219,7 +219,7 @@ tomb.ForEach(elem => lista.Add(elem));
 > Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
 
 ### Insert(id, elem)
-> Az `Insert()` függvénnyel egy listába , index alapján tudunk beszúrni elemet
+> Az `Insert()` függvénnyel egy listába, index alapján tudunk beszúrni elemet
 ```csharp
 int[] tomb = {1,2,3,4};
 List<int> lista = new List<int>();
@@ -237,4 +237,4 @@ lista.Insert(1, 4)
 > Eredmény
 ```{1,4,3,4}```
 
-[//]: <> (TODO: lista folytatása , dictionary-vel)
+[//]: <> (TODO: lista folytatása, dictionary-vel)
