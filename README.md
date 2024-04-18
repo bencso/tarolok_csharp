@@ -254,7 +254,7 @@ lista.Insert(1, 4)
 >```{1,4,3,4}```
 
 
-## Függvények:
+## Listán használt függvények:
 
 - ### LastIndexOf() 
 > Visszaadja egy érték utolsó előfordulásának nulla alapú indexét a listában vagy annak egy részében.
