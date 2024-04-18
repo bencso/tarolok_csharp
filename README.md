@@ -256,23 +256,23 @@ lista.Insert(1, 4)
 
 ## Függvények:
 
-### LastIndexOf() 
+- ### LastIndexOf() 
 > Visszaadja egy érték utolsó előfordulásának nulla alapú indexét a listában vagy annak egy részében.
-### Remove(T) 
+- ### Remove(T) 
 > Eltávolítja egy adott objektum első előfordulását a listából.
-### RemoveAll() 
+- ### RemoveAll() 
 > Eltávolítja az összes olyan elemet, amely megfelel a meghatározott feltételeknek.
 ### RemoveAt(Int) 
 > Eltávolítja a lista megadott indexén lévő elemet.
-### RemoveRange(Int, Int) 
+- ### RemoveRange(Int, Int) 
 > Eltávolít egy elemtartományt a listából.
-### Reverse() 
+- ### Reverse() 
 > Megfordítja a lista elemeinek vagy egy részének sorrendjét. 
-### Sort()  
+- ### Sort()  
 > A lista elemeit vagy azok egy részét rendezi. 
-### ToArray()  
+- ### ToArray()  
 > A lista elemeit egy új tömbbe másolja. 
-### ToString()  
+- ### ToString()  
 > Visszaad egy stringet, amely az aktuális objektumot reprezentálja. 
 
 [//]: <> (TODO: lista folytatása, dictionary-vel)
