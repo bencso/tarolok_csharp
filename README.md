@@ -1,6 +1,6 @@
 # Tömbök és Listák
 
-## Tartalomjegyzék
+## Tartalomjegyzék [^1]
 1. [Tömb](#tömb)
    - [Egydimenziós tömb](#egydimenziós-tömb)
    - [Többdimenziós/mátrix tömb](#többdimenziósmátrix-tömb)
@@ -171,3 +171,5 @@ lista.Insert(1, "Második elem"); // Második elem az 1. indexre kerül
 ## Gyakorláshoz feladatok
 - Hozz létre egy programot, amely egy osztály diákjainak adatait tárolja le. Az alkalmazás tegye lehetővé a diákok hozzáadását, eltávolítását, valamint adott diákra való keresést.
 - Készíts egy telefonkönyv programot, ahol a felhasználó letárolhatja az alábbi adatokat: név, telefonszám, város. A felhasználó tudjon új telefonszámot hozzáadni, eltávolítani, és tudjon név, illetve telefonszám szerint keresni.
+
+[^1]: Sajnos a mobilos applikációban nem működik, az ékezetes betűk miatt
