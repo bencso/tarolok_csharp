@@ -52,7 +52,7 @@ nevsor[11] = "Lekv Áron";
 for(int i = 0; i < nevsor.Length; i++) Console.WriteLine("{0}. {1}", i + 1, nevsor[i]);
 ```
 > [!NOTE]  
-> Mivel a tömb indexelése 0-val kezdődik, ezért a fenti módon `i+1` tudjuk, a diákok sorszámozását 1-től kezdeni.
+> Mivel a tömb indexelése 0-val kezdődik, ezért a fenti módon (`i+1`) tudjuk, a diákok sorszámozását 1-től kezdeni.
 
 ## Többdimenziós/mátrix tömb
 > A többdimenziós tömbök egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg. Úgy is mondhatjuk, hogy ez a "tömbök tömbje".
