@@ -1,276 +1,112 @@
-# Tárolók
-<img src="tombok.jpg"/>
+# Tömbök és Listák
+
+## Tartalomjegyzék
+1. [Tömb](#tömb)
+   - [Egydimenziós tömb](#egydimenziós-tömb)
+   - [Többdimenziós/mátrix tömb](#többdimenziósmátrix-tömb)
+   - [Tömbök feltöltése](#tömbök-feltöltése)
+   - [Tömb elemeinek kiiratása](#tömb-elemeinek-kiiratása)
+   - [Tömbön használt függvények](#tömbön-használt-függvények)
+2. [Lista](#lista)
+   - [Lista feltöltése](#lista-feltöltése)
+   - [Listán használt függvények](#listán-használt-függvények)
+3. [Tömbök és Listák Összefoglalása](#tömbök-és-listák-összefoglalása)
+4. [Példa Projektek és Gyakorlatok](#példa-projektek-és-gyakorlatok)
 
 ## Tömb
-> A tömb olyan adatszerkezet, amely több azonos típusú változót tárolhat. Egy tömb deklarálásához meg kell adnunk ,hogy milyen típusú elemeket fogunk benne tárolni. Ha bármilyen típusú elemeket szeretnénk tárolni benne, akkor a tömböt `object`-ként kell deklarálni.
-```csharp
-típus[] elnevezés;
-```
-- példa `típus`-ok:
-  - ```csharp
-    int[] egeszSzam = new int[x];
-    ```
-  - ```csharp
-    string[] karakterLanc = new string[x];
-    ```
-  - ```csharp
-    bool[] logikai = new bool[x];
-    ```
-  - ...
-- Tömbök egydimenziósak és többdimenziósak is lehetnek. Ezeket a deklarálások során kell megadni.
-
-| Tulajdonságok | Leírás |
-| --- | --- |
-| IsFixedLength | Megkapja vagy beállítja azt a logikai értéket (bool), amely jelzi, hogy a tömb fix méretű-e. |
-| IsReadOnly | Megkapja vagy beállítja azt a logikai értéket (bool), amely jelzi, hogy a tömb csak olvasható-e. |
-| Length | A tömb összes dimenziójának összes elemének számát ("tömb méretét") kapja meg vagy állítja be. |
-| MaxLength | A tömbben található elemek maximális számát kapja meg vagy állítja be. |
-| Rank | Az dimenziók számát kapja meg vagy állítja be. Például egy egydimenziós tömb 1, egy kétdimenziós tömb 2.... |
-
->[!IMPORTANT]
->Az indexelés 0-val kezdődik. Ez azt jelenti, hogy a tömb első eleme a 0. indexen lesz, nem pedig az 1-ön.
-  
-### Egydimenziós tömb:
-> Az egydimenziós tömb olyan adatszerkezet ,amelynek elemei egymás után kerülnek tárolásra a memóriában. Ezt úgy lehet elképzelni, mint egy listát (Array), ahol minden elemnek van egy **egyedi** indexe, amely **nullával** kezdődik.
-
-Deklarálás:
-```csharp
-int[] 1DTomb = new int[14];
-```
-**Példa: Osztálynévsor**
-```csharp
-string[] nevsor = new string[12];
-```
-*Minden egyes gyerek nevéhez tartozik egy szám (index), ezzel tudjuk őket azonosítani. <br> Jelen esetben az osztály 12 fős (string[**12**]. <br> Mivel a tömb indexelése 0-val kezdődik, ezért a kódunkban át kell alakítani a felsorolást, ha ki szeretnénk iratni a névsort.*
-```csharp
-//Tömb:
-
-nevsor[0] = "Antal Pista";
-nevsor[1] = "Dénes Albert";
-nevsor[2] = "Nagy Lajos";
-nevsor[n+1] = "....";
-
-for(int i=0;i<nevsor.length;i++){
- Console.WriteLine("{0}. {1}", i+1 , nevsor[i])
-}
-```
-
-### Többdimenziós/mátrix tömb:
-> A többdimenziós tömbök, egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg.
-> Úgy is mondhatjuk, hogy ez a "tömbök tömbje"
-
-Deklarálás:
-```csharp
-int[,] tobbDimenzios = new int[sor][oszlop];
-```
-
-**Példa: Tic-Tac-Toe**
-```csharp
-string[,] palya = new string[3,3]{
-  { "", "", "" },
-  { "", "", "" },
-  { "", "", "" }
-};
-```
-*Tic-Tac-Toe játéktere 3 oszlopból és 3 sorból áll.
-Minden olyan kombinációt meg kell vizsgálnunk, amivel a játékos nyerhet.
-Ezt úgy valósítjuk meg, hogy a tömb adott indexein lévő elemeket összevetjük a velük (függölegesen/vízszintesen/átlósan) szomszédos elemekkel.*
-```
-"Koordináták" szerint:
-   |  0 | 1 | 2
-0  |{ 0,  1,  2 } -> palya[0, 0], palya[0, 1], palya[0, 2]);
-1  |{ 0,  1,  2 } -> palya[1, 0], palya[1, 1], palya[1, 2]);
-2  |{ 0,  1,  2 } -> palya[2, 0], palya[2, 1], palya[2, 2]);
-
-A kód szerint:
-   |   0  | 1  | 2
-0  |{ "O", "O", "O" }
-1  |{ "O", "X", "X" }
-2  |{ "X", "O", "X" }
-```
-*A fenti ábrán az "O" játékos nyert, ugyanis az első sorban 3 "O"-t tett le egymás mellé, ezt az alábbi módon tudjuk leellenőrizni:*
-```csharp
-if (palya[0, 0] == "O" && (palya[0, 0] == palya[0, 1]) && (palya[0, 1] == palya[0, 2]))
-  {
-  //Console.WriteLine("O nyert");
-  }
-```
-
-### Tömbök feltöltése:
-> A tömb random számokkal való feltöltése `for` ciklussal:
-```csharp
-Random rnd = new Random();
-
-for (int i=0; i<tomb.Length; i++){
-  tomb[i] = rnd.Next(); 
-}
-```
-> A tömb a felhasználó megadott adatokkal feltöltése `for` ciklussal:
-```csharp
-for (int i=0; i<tomb.Length; i++){                
-  Console.WriteLine("Adja meg a/az {0}. elemet: ", i);
-  tomb[i] = Console.ReadLine();
-}
-```
-### Tömb elemeinek kiiratása:
-> Tömb elemeinek kiiratása `foreach`-al:
-```csharp
-foreach(var elem in tömb)
-{
- Console.WriteLine(elem.ToString());
-}
-```
-> Tömb elemeinek kiiratása `for` ciklussal:
-```csharp
-for (int i=0; i<tomb.Length; i++){                
-  Console.WriteLine(tomb[i].ToString());          
-}
-```
-
-## Tömbön használt függvények
-- ### Sort(tomb)
-  > Ez a függvény, a tömb elemeit növekvő sorrendbe rendezi.
-  ```csharp
-  int[] tomb = { 3, 1, 4, 2 };
-  Array.Sort(tomb);
-  ```
-  **Eredmény:**
-  > [1,2,3,4]
-
->[!NOTE]
-> Ha string-et (karakter sorozatot) szeretnénk sort() függvénnyel sorba rendezni, akkor az, az ABC-nek megfelelően helyezi sorba.
-
-- ### Reverse(tomb)
-  > Ez a függvény, megfordítja a tömb elemeinek sorrendjét.
-    ```csharp
-  int[] tomb = { 1, 2, 3, 4 };
-  Array.Reverse(numbers);
-  ```
-  **Eredmény:**
-  > [4,3,2,1]
-- ### IndexOf(tomb, int)
-  > Ez a függvény, egy adott értéket keres a tömbben, és az érték *(első előfordulásának)* indexét adja vissza.
-     ```csharp
-      int[] tomb = { 1, 2, 3, 4 };
-      int index = Array.IndexOf(numbers, 3);
-     ```
-    **Eredmény:**
-    > Index: 2
-> [!IMPORTANT]
-> Ha az értéket nem találja, akkor -1-et ad vissza.
-- ### Clear(tomb)
-  > Ez a függvény, a tömb összes elemét egy alapértelmezett értékre állítja.
-    ```csharp
-    int[] tomb = { 1, 2, 3, 4 };
-    Array.Clear(tomb, 0, numbers.Length);
-    ```
-  **Eredmény:**
-  > [0,0,0,0]
-- ### Resize(tomb, int)
-  > Ez a függvény megváltoztatja a tömb méretét, akár elemek hozzáadásával, akár eltávolításával. 
-    ```csharp
-    int[] tomb = { 1, 2, 3, 4 };
-    Array.Resize(ref tomb, 6);
-    ```
-  **Eredmény:**
-  > [1,2,3,4,0,0]
-
-## Lista
-
-*Az index alapján elérhető objektumok szabványosított listáját valósítja meg. Metódusokat biztosít a listák kereséséhez, rendezéséhez és manipulálásához/módosításához.*
-
->A C# lista egy általános osztály, és a  eléréséhez ezt a névteret kell importálnia a projektjébe.
-```csharp
-using System.Collections.Generic
-```
-
-| Tulajdonságok | Leírás |
-| --- | --- |
-| Capacity | Megkapja vagy beállítja a belső adatszerkezetben átméretezés nélkül tárolható elemek teljes számát. |
-| Count | Megkapja vagy beállítja a listában található elemek számát. |
-| Item[Int] | Megkapja vagy beállítja a megadott indexen lévő elemet. |
-
+> A tömb olyan adatszerkezet, amely több azonos típusú változót tárolhat. A tömb deklarálásához meg kell adni, hogy milyen típusú elemeket fogunk benne tárolni.
 
 ### Deklarálás
 ```csharp
-List<int> egeszSzam = new List<int>();
+típus[] elnevezés;
+```
+### Példák a típusokra:
+```csharp
+int[] egeszSzam = new int[10]; // 10 elemű egész számok tömbje
+string[] karakterLanc = new string[10]; // 10 elemű karakterláncok tömbje
+bool[] logikai = new bool[10]; // 10 elemű logikai értékek tömbje
+```
+## Egydimenziós tömb
+> Az egydimenziós tömb egy olyan adatszerkezet, amelynek elemei egymás után, egy vonalban kerülnek tárolásra a memóriában. Az egydimenziós tömböt úgy is elképzelhetjük, mint egy listát, ahol minden elemnek van egy egyedi indexe, amely nullával kezdődik. Az indexek lehetővé teszik, hogy könnyen hozzáférjünk a tömb elemeihez, és módosíthassuk azokat.
 
-List<string> karakterLanc = new List<string>(2); // <- így megadjuk a 'capacity'-t
-
-string[] tomb = { "elem" };
-List<string> tombbolLista = new List<string>(tomb);
+### Deklarálás
+```csharp
+int[] egydimenziosTomb = new int[14]; // 14 elemű egész számok tömbje
 ```
 
-## Lista feltöltése
-> Többféle módon tölthetjük fel a listánkat elemekkel:
-### Add(elem) 
-> Ezzel a függvénnyel egyesével tudjuk, hozzáadni az elemeket a listánkhoz.
+### Példa: Osztálynévsor
+> Képzeljük el egy osztályt, amelyben 12 diák neve található. A diákok nevét egy tömbként tároljuk le.
 ```csharp
-List<string> lista = new List<string>();
-lista.Add("Ez egy elem lesz");
-lista.Add("Ez egy másik elem");
+string[] nevsor = new string[12];
 ```
-**Eredmény:**
-> ```{"Ez egy elem lesz", "Ez egy másik elem"}```
-### AddRange(elemek-csoportja)
-> Az `AddRange()` függvény egy adott elem csoportot (/vagy tömb elemeit) ad hozzá a listánkhoz
+### Nevek feltöltése
+> Mivel a tömbök indexelése 0-val kezdődik, a diákok neveit a következő módon adhatjuk meg:
 ```csharp
-int[] tomb = {1,2,3,4};
-List<int> lista = new List<int>();
-lista.AddRange(tomb);
+nevsor[0] = "Bak Tass";
+nevsor[1] = "Ceruza Elemér";
+nevsor[2] = "Cserepes Virág";
+// ....
+nevsor[11] = "Lekv Áron";
 ```
-**Eredmény:**
->```{1,2,3,4}```
-
-*vagy*
+### Nevek kiíratása
+> A tömb elemeit a `for` ciklus segítségével kiírhatjuk a konzolra:
 ```csharp
-int[] tomb = {1,2,3,4};
-List<int> lista = new List<int>();
-tomb.ForEach(elem => lista.Add(elem));
+for(int i = 0; i < nevsor.Length; i++) Console.WriteLine("{0}. {1}", i + 1, nevsor[i]);
 ```
-**Eredmény:**
->```{1,2,3,4}```
+> [!NOTE]  
+> Mivel a tömb indexelése 0-val kezdődik, ezért a fenti módon `i+1` tudjuk, a diákok sorszámozását 1-től kezdeni.
 
->[!IMPORTANT]
-> Ha tömbből szeretnénk listába áthelyezni az elemeket, akkor azonos adattípusú kell legyen a két tároló. (list<int> , int[])
+## Többdimenziós/mátrix tömb
+> A többdimenziós tömbök egynél több dimenzióval rendelkező tömbök. Egy kétdimenziós tömb például egy sorokkal és oszlopokkal rendelkező táblázatként jeleníthető meg. Úgy is mondhatjuk, hogy ez a "tömbök tömbje".
 
-### Insert(id, elem)
-> Az `Insert()` függvénnyel egy listába, index alapján tudunk beszúrni/módosítani elemet
+### Deklarálás
 ```csharp
-int[] tomb = {1,2,3,4};
-List<int> lista = new List<int>();
-tomb.ForEach(elem => lista.Add(elem));
-/*
-lista:{
-1, id: 0
-2, id: 1
-3, id: 2
-4  id: 3
+int[,] tobbDimenzios = new int[sor, oszlop]; // pl. 3 sor 3 oszlop
+```
+
+### Példa: TicTacToe
+> A Tic-Tac-Toe játéktere egy kétdimenziós tömb segítségével könnyen megvalósítható:
+```csharp
+string[,] palya = new string[3,3] {
+    { "", "", "" },
+    { "", "", "" },
+    { "", "", "" }
+};
+```
+A játék során ellenőriznünk kell, hogy a játékos nyert-e, ehhez a tömb adott indexein lévő elemeket kell összevetnünk. Példa:
+
+## Tömbök feltöltése
+> A tömböket különböző módokon tölthetjük fel, például véletlenszerű számokkal vagy felhasználói bemenettel.
+
+### Random számokkal való feltöltés:
+```csharp
+Random rnd = new Random();
+for (int i = 0; i < tomb.Length; i++) tomb[i] = rnd.Next(); // véletlenszámok generálása
+```
+
+### Felhasználó által megadott adatokkal való feltöltés:
+```csharp
+for (int i = 0; i < tomb.Length; i++) {
+    Console.WriteLine("Adja meg a(z) {0}. elemet: ", i);
+    tomb[i] = Console.ReadLine();
 }
-*/
-lista.Insert(1, 4)
 ```
-**Eredmény:**
->```{1,4,3,4}```
 
+## Tömb elemeinek kiiratása
+### `foreach` ciklussal
+```csharp
+foreach(var elem in tomb) Console.WriteLine(elem.ToString());
+```
+### `for` ciklussal
+```csharp
+for (int i = 0; i < tomb.Length; i++) Console.WriteLine(tomb[i].ToString());
+```
 
-## Listán használt függvények:
-
-- ### LastIndexOf() 
-> Visszaadja egy érték utolsó előfordulásának nulla alapú indexét a listában vagy annak egy részében.
-- ### Remove(T) 
-> Eltávolítja egy adott objektum első előfordulását a listából.
-- ### RemoveAll() 
-> Eltávolítja az összes olyan elemet, amely megfelel a meghatározott feltételeknek.
-### RemoveAt(Int) 
-> Eltávolítja a lista megadott indexén lévő elemet.
-- ### RemoveRange(Int, Int) 
-> Eltávolít egy elemtartományt a listából.
-- ### Reverse() 
-> Megfordítja a lista elemeinek vagy egy részének sorrendjét. 
-- ### Sort()  
-> A lista elemeit vagy azok egy részét rendezi. 
-- ### ToArray()  
-> A lista elemeit egy új tömbbe másolja. 
-- ### ToString()  
-> Visszaad egy stringet, amely az aktuális objektumot reprezentálja. 
+## Tömbön használt függvények
+|    Függvény neve   |                  Függvény leírása                 |                                 LINQ                                 |
+|:------------------:|:-------------------------------------------------:|:--------------------------------------------------------------------:|
+|     Sort(tomb)     |     Növekvő sorrendbe rendezi a tömb elemeit.     | `int [] tomb = {3,1,4,2}; Array.Sort(tomb);` |
+|    Reverse(tomb)   |      Megfordítja a tömb elemeinek sorrendjét.     |           `int[] tomb = {1,2,3,4}; Array.Reverse(tomb);`          |
+| IndexOf(tomb, int) |      Visszaadja az első előfordulás indexét.      |            `Array.IndexOf(tomb, 3); // Eredmény: 2`          |
+|     Clear(tomb)    | Az összes elemet alapértelmezett értékre állítja. |            `Array.Clear(tomb, 0, tomb.Length); // [0,0,0,0]`           |
+|  Resize(tomb, int) |           Megváltoztatja a tömb méretét.          |             ` Array.Resize(ref tomb, 6); // [1,2,3,4,0,0]`             |
