@@ -10,9 +10,7 @@
 2. [Lista](#lista)
    - [Lista feltöltése](#lista-feltöltése)
    - [Listán használt függvények](#listán-használt-függvények)
-3. [Tömbök és Listák Összefoglalása](#tömbök-és-listák-összefoglalása)
-4. [Példa Projektek és Gyakorlatok](#példa-projektek-és-gyakorlatok)
-
+3. [Tömbök és Listák összefoglalás](#tömbök-és-listák-összefoglalás)
 ## Tömb
 > A tömb olyan adatszerkezet, amely több azonos típusú változót tárolhat. A tömb deklarálásához meg kell adni, hogy milyen típusú elemeket fogunk benne tárolni.
 
@@ -103,10 +101,73 @@ for (int i = 0; i < tomb.Length; i++) Console.WriteLine(tomb[i].ToString());
 ```
 
 ## Tömbön használt függvények
-|    Függvény neve   |                  Függvény leírása                 |                                 LINQ                                 |
+|    Függvény neve   |                  Függvény leírása                 |                                 Függvény                                 |
 |:------------------:|:-------------------------------------------------:|:--------------------------------------------------------------------:|
 |     Sort(tomb)     |     Növekvő sorrendbe rendezi a tömb elemeit.     | `int [] tomb = {3,1,4,2}; Array.Sort(tomb);` |
 |    Reverse(tomb)   |      Megfordítja a tömb elemeinek sorrendjét.     |           `int[] tomb = {1,2,3,4}; Array.Reverse(tomb);`          |
 | IndexOf(tomb, int) |      Visszaadja az első előfordulás indexét.      |            `Array.IndexOf(tomb, 3); // Eredmény: 2`          |
 |     Clear(tomb)    | Az összes elemet alapértelmezett értékre állítja. |            `Array.Clear(tomb, 0, tomb.Length); // [0,0,0,0]`           |
 |  Resize(tomb, int) |           Megváltoztatja a tömb méretét.          |             ` Array.Resize(ref tomb, 6); // [1,2,3,4,0,0]`             |
+
+## Lista
+> A lista egy dinamikus adatszerkezet, amely lehetővé teszi az elemek tárolását és kezelését.
+
+### Deklarálás
+```csharp
+using System.Collections.Generic;
+
+List<int> egeszSzam = new List<int>();
+List<string> karakterLanc = new List<string>(2);
+```
+
+## Lista feltöltése
+### `Add(elem)`
+> Az `Add` függvény segítségével egyesével adhatunk hozzá elemeket a lisáthoz:
+```csharp
+List<string> bevasarloLista = new List<string>();
+bevasarloLista.Add("1 kg cukor");
+```
+### `AddRange(elemek)`
+> A `AddRange` függvénnyel egy adott elem csoportot (pl. tömb) adhatunk hozzá a listánkhoz:
+```csharp
+int[] tomb = { 1, 4, 5, 5 };
+List<int> jegyekLista = new List<int>();
+jegyekLista.AddRange(tomb);
+```
+
+#### `Insert(index, elem)`
+> Az `Insert` függvény segítségével egy megadott indexre adhatunk hozzá egy elemet a listához. Az összes következő elem eltolódik egy helyet.
+```csharp
+List<string> lista = new List<string>();
+lista.Add("Első elem");
+lista.Insert(1, "Második elem"); // Második elem az 1. indexre kerül
+```
+
+## Listán használt függvények
+### Manipuláláshoz használt függvények
+|  Függvény neve  	|                                                                          Függvény leírása                                                                          	|            Függvény           	|
+|:---------------:	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|:-----------------------------:	|
+|   Remove(elem)  	| A Remove függvénnyel eltávolíthatunk egy adott elemet a listából. Ha az elem több példányban is szerepel a listában, csak az első előfordulás kerül eltávolításra. 	| `lista.Remove("Első elem"); ` 	|
+| RemoveAt(index) 	| A RemoveAt függvény egy adott indexen található elemet távolít el a listából.                                                                                      	| `lista.RemoveAt(0);`          	|
+| Clear()         	| A Clear függvény eltávolítja az összes elemet a listából.                                                                                                          	| `lista.Clear();`              	|
+### Fontosabb függvények
+|  Függvény neve 	|                                                                Függvény leírása                                                                	|                    Függvény                    	|
+|:--------------:	|:----------------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------------------------:	|
+|      Count     	|                                        A Count tulajdonság visszaadja a lista jelenlegi elemének számát.                                       	|               `lista.Count;`               	|
+| Contains(elem) 	| A Contains függvény ellenőrzi, hogy a megadott elem szerepel-e a listában. Igaz értéket ad vissza, ha az elem megtalálható, egyébként hamisat. 	| `bool van = lista.Contains("Egyik elem");` 	|
+| IndexOf(elem)  	| Az IndexOf függvény visszaadja a megadott elem első előfordulásának indexét, vagy -1-et, ha az elem nem található.                             	| `int index = lista.IndexOf("Egyik elem");` 	|
+| Sort()         	| A Sort függvény rendezi a lista elemeit növekvő sorrendbe.                                                                                     	| `lista.Sort();`                                	|
+| Reverse()      	| A Reverse függvény megfordítja a lista elemeinek sorrendjét.                                                                                   	| `lista.Reverse();`                             	|
+| ToArray()      	| A ToArray függvény segítségével a listát tömbbé alakíthatjuk.                                                                                  	| `string[] tomb = lista.ToArray();`             	|
+
+## Tömbök és Listák összefoglalása
+- Tömbök:
+   - Statikus méret (a méret deklaráláskor rögzített), ezért ideálisak, ha tudjuk az adatok pontos számát.
+   - Az elemek elérhetők indexek segítségével.
+- Listák:
+   - Dinamikus méret (automatikusan bővülhetnek), így alkalmasabbak, ha nem tudjuk előre az elemek számát.
+   - Rugalmasabbak, mivel elemeket lehet hozzáadni vagy eltávolítani bármikor.
+
+## Gyakorláshoz feladatok
+- Hozz létre egy programot, amely egy osztály diákjainak adatait tárolja le. Az alkalmazás tegye lehetővé a diákok hozzáadását, eltávolítását, valamint adott diákra való keresést.
+- Készíts egy telefonkönyv programot, ahol a felhasználó letárolhatja az alábbi adatokat: név, telefonszám, város. A felhasználó tudjon új telefonszámot hozzáadni, eltávolítani, és tudjon név, illetve telefonszám szerint keresni.
