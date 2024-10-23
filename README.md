@@ -10,7 +10,7 @@
 2. [Lista](#lista)
    - [Lista feltöltése](#lista-feltöltése)
    - [Listán használt függvények](#listán-használt-függvények)
-3. [Tömbök és Listák összefoglalás](#tömbök-és-listák-összefoglalás)
+3. [Tömbök és Listák összefoglalása](#tömbök-és-listák-összefoglalása)
 ## Tömb
 > A tömb olyan adatszerkezet, amely több azonos típusú változót tárolhat. A tömb deklarálásához meg kell adni, hogy milyen típusú elemeket fogunk benne tárolni.
 
